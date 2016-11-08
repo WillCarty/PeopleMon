@@ -15,7 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Step 3: set baseURL
+        //        WebServices.shared.baseURL = "http://jsonplaceholder.typicode.com"
+        
+        // Step 9: change baseURL
+        WebServices.shared.baseURL = "https://efa-peoplemon-api.azurewebsites.net//swagger/ui/index#/"
+        
+        // Step 20: add UIAppearance
+        UINavigationBar.appearance().tintColor = ColorPalette.GoldColor
+        UINavigationBar.appearance().barTintColor = ColorPalette.BlueColor
+        UINavigationBar.appearance().isTranslucent = false
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        UISegmentedControl.appearance().tintColor = ColorPalette.BlueColor
+        
         return true
     }
 

@@ -7,11 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C63F068DC95087129BC8B9F /* Pods_Peoplemon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB0CE808C54EB8406A0D401 /* Pods_Peoplemon.framework */; };
 		5A8DD5DB1DCD5DDE005BF296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DD5DA1DCD5DDE005BF296 /* AppDelegate.swift */; };
 		5A8DD5DD1DCD5DDE005BF296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DD5DC1DCD5DDE005BF296 /* ViewController.swift */; };
 		5A8DD5E01DCD5DDE005BF296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8DD5DE1DCD5DDE005BF296 /* Main.storyboard */; };
 		5A8DD5E21DCD5DDE005BF296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8DD5E11DCD5DDE005BF296 /* Assets.xcassets */; };
-		5A8DD5E51DCD5DDE005BF296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8DD5E31DCD5DDE005BF296 /* LaunchScreen.storyboard */; };
+		5AFE47711DD0D09000DD5ED6 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47701DD0D09000DD5ED6 /* NetworkModel.swift */; };
+		5AFE47731DD0D0B700DD5ED6 /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47721DD0D0B700DD5ED6 /* Webservices.swift */; };
+		5AFE47751DD0D13200DD5ED6 /* WebServicesExension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47741DD0D13200DD5ED6 /* WebServicesExension.swift */; };
+		5AFE47771DD0D1B700DD5ED6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47761DD0D1B700DD5ED6 /* Constants.swift */; };
+		5AFE47791DD0D32600DD5ED6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47781DD0D32600DD5ED6 /* LoginViewController.swift */; };
+		5AFE477B1DD0D33C00DD5ED6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE477A1DD0D33C00DD5ED6 /* RegisterViewController.swift */; };
+		5AFE477F1DD0D86D00DD5ED6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE477E1DD0D86D00DD5ED6 /* Utilities.swift */; };
+		5AFE47811DD0D95200DD5ED6 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47801DD0D95200DD5ED6 /* AccountModel.swift */; };
+		5AFE47831DD0D96200DD5ED6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47821DD0D96200DD5ED6 /* UserModel.swift */; };
+		5AFE47851DD0D97000DD5ED6 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47841DD0D97000DD5ED6 /* AuthModel.swift */; };
+		5AFE47871DD1059400DD5ED6 /* LoginRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFE47861DD1059400DD5ED6 /* LoginRegister.storyboard */; };
+		5AFE47891DD1090000DD5ED6 /* PeopleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47881DD1090000DD5ED6 /* PeopleStore.swift */; };
+		5AFE478B1DD12DDC00DD5ED6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE478A1DD12DDC00DD5ED6 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +33,23 @@
 		5A8DD5DC1DCD5DDE005BF296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A8DD5DF1DCD5DDE005BF296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A8DD5E11DCD5DDE005BF296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5A8DD5E41DCD5DDE005BF296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A8DD5E61DCD5DDE005BF296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFE47701DD0D09000DD5ED6 /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkModel.swift; path = networking/NetworkModel.swift; sourceTree = "<group>"; };
+		5AFE47721DD0D0B700DD5ED6 /* Webservices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Webservices.swift; path = networking/Webservices.swift; sourceTree = "<group>"; };
+		5AFE47741DD0D13200DD5ED6 /* WebServicesExension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServicesExension.swift; path = networking/WebServicesExension.swift; sourceTree = "<group>"; };
+		5AFE47761DD0D1B700DD5ED6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5AFE47781DD0D32600DD5ED6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
+		5AFE477A1DD0D33C00DD5ED6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ViewControllers/RegisterViewController.swift; sourceTree = "<group>"; };
+		5AFE477E1DD0D86D00DD5ED6 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Components/Utilities.swift; sourceTree = "<group>"; };
+		5AFE47801DD0D95200DD5ED6 /* AccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountModel.swift; path = Models/AccountModel.swift; sourceTree = "<group>"; };
+		5AFE47821DD0D96200DD5ED6 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Models/UserModel.swift; sourceTree = "<group>"; };
+		5AFE47841DD0D97000DD5ED6 /* AuthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		5AFE47861DD1059400DD5ED6 /* LoginRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LoginRegister.storyboard; path = StoryBoards/LoginRegister.storyboard; sourceTree = "<group>"; };
+		5AFE47881DD1090000DD5ED6 /* PeopleStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleStore.swift; path = Components/PeopleStore.swift; sourceTree = "<group>"; };
+		5AFE478A1DD12DDC00DD5ED6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
+		8EB0CE808C54EB8406A0D401 /* Pods_Peoplemon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peoplemon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70B377B95AC79F789561E6D /* Pods-Peoplemon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peoplemon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Peoplemon/Pods-Peoplemon.release.xcconfig"; sourceTree = "<group>"; };
+		BD6FAC260B7D8770F71AF4E1 /* Pods-Peoplemon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peoplemon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Peoplemon/Pods-Peoplemon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C63F068DC95087129BC8B9F /* Pods_Peoplemon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +69,8 @@
 			children = (
 				5A8DD5D91DCD5DDE005BF296 /* Peoplemon */,
 				5A8DD5D81DCD5DDE005BF296 /* Products */,
+				DF8EAE567A9712EE9A75C393 /* Pods */,
+				B0695A5DACE3B5F88E4DC407 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +85,91 @@
 		5A8DD5D91DCD5DDE005BF296 /* Peoplemon */ = {
 			isa = PBXGroup;
 			children = (
+				5AFE476F1DD0CB6500DD5ED6 /* Components */,
+				5AFE476E1DD0CB4800DD5ED6 /* Storyboards */,
+				5AFE476D1DD0CB3D00DD5ED6 /* TableCell */,
+				5AFE476C1DD0CB2E00DD5ED6 /* ViewController */,
+				5AFE476B1DD0CB1F00DD5ED6 /* Models */,
+				5AFE476A1DD0CB1400DD5ED6 /* Networking */,
 				5A8DD5DA1DCD5DDE005BF296 /* AppDelegate.swift */,
 				5A8DD5DC1DCD5DDE005BF296 /* ViewController.swift */,
-				5A8DD5DE1DCD5DDE005BF296 /* Main.storyboard */,
 				5A8DD5E11DCD5DDE005BF296 /* Assets.xcassets */,
-				5A8DD5E31DCD5DDE005BF296 /* LaunchScreen.storyboard */,
 				5A8DD5E61DCD5DDE005BF296 /* Info.plist */,
 			);
 			path = Peoplemon;
+			sourceTree = "<group>";
+		};
+		5AFE476A1DD0CB1400DD5ED6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5AFE47701DD0D09000DD5ED6 /* NetworkModel.swift */,
+				5AFE47721DD0D0B700DD5ED6 /* Webservices.swift */,
+				5AFE47741DD0D13200DD5ED6 /* WebServicesExension.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		5AFE476B1DD0CB1F00DD5ED6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5AFE47801DD0D95200DD5ED6 /* AccountModel.swift */,
+				5AFE47821DD0D96200DD5ED6 /* UserModel.swift */,
+				5AFE47841DD0D97000DD5ED6 /* AuthModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5AFE476C1DD0CB2E00DD5ED6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5AFE47781DD0D32600DD5ED6 /* LoginViewController.swift */,
+				5AFE477A1DD0D33C00DD5ED6 /* RegisterViewController.swift */,
+				5AFE478A1DD12DDC00DD5ED6 /* MainViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5AFE476D1DD0CB3D00DD5ED6 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TableCell;
+			sourceTree = "<group>";
+		};
+		5AFE476E1DD0CB4800DD5ED6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5A8DD5DE1DCD5DDE005BF296 /* Main.storyboard */,
+				5AFE47861DD1059400DD5ED6 /* LoginRegister.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		5AFE476F1DD0CB6500DD5ED6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5AFE47761DD0D1B700DD5ED6 /* Constants.swift */,
+				5AFE477E1DD0D86D00DD5ED6 /* Utilities.swift */,
+				5AFE47881DD1090000DD5ED6 /* PeopleStore.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		B0695A5DACE3B5F88E4DC407 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EB0CE808C54EB8406A0D401 /* Pods_Peoplemon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF8EAE567A9712EE9A75C393 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD6FAC260B7D8770F71AF4E1 /* Pods-Peoplemon.debug.xcconfig */,
+				A70B377B95AC79F789561E6D /* Pods-Peoplemon.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A8DD5E91DCD5DDE005BF296 /* Build configuration list for PBXNativeTarget "Peoplemon" */;
 			buildPhases = (
+				5ADB509044096DF35A1BA555 /* [CP] Check Pods Manifest.lock */,
 				5A8DD5D31DCD5DDE005BF296 /* Sources */,
 				5A8DD5D41DCD5DDE005BF296 /* Frameworks */,
 				5A8DD5D51DCD5DDE005BF296 /* Resources */,
+				AFC6EEA126311979E3BBAA5C /* [CP] Embed Pods Frameworks */,
+				4F89660459328191CD1067C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,7 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8DD5E51DCD5DDE005BF296 /* LaunchScreen.storyboard in Resources */,
+				5AFE47871DD1059400DD5ED6 /* LoginRegister.storyboard in Resources */,
 				5A8DD5E21DCD5DDE005BF296 /* Assets.xcassets in Resources */,
 				5A8DD5E01DCD5DDE005BF296 /* Main.storyboard in Resources */,
 			);
@@ -132,13 +243,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F89660459328191CD1067C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Peoplemon/Pods-Peoplemon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ADB509044096DF35A1BA555 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AFC6EEA126311979E3BBAA5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Peoplemon/Pods-Peoplemon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A8DD5D31DCD5DDE005BF296 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFE47791DD0D32600DD5ED6 /* LoginViewController.swift in Sources */,
+				5AFE47751DD0D13200DD5ED6 /* WebServicesExension.swift in Sources */,
+				5AFE47711DD0D09000DD5ED6 /* NetworkModel.swift in Sources */,
+				5AFE47851DD0D97000DD5ED6 /* AuthModel.swift in Sources */,
+				5AFE477B1DD0D33C00DD5ED6 /* RegisterViewController.swift in Sources */,
 				5A8DD5DD1DCD5DDE005BF296 /* ViewController.swift in Sources */,
+				5AFE47731DD0D0B700DD5ED6 /* Webservices.swift in Sources */,
+				5AFE478B1DD12DDC00DD5ED6 /* MainViewController.swift in Sources */,
 				5A8DD5DB1DCD5DDE005BF296 /* AppDelegate.swift in Sources */,
+				5AFE47771DD0D1B700DD5ED6 /* Constants.swift in Sources */,
+				5AFE47811DD0D95200DD5ED6 /* AccountModel.swift in Sources */,
+				5AFE477F1DD0D86D00DD5ED6 /* Utilities.swift in Sources */,
+				5AFE47831DD0D96200DD5ED6 /* UserModel.swift in Sources */,
+				5AFE47891DD1090000DD5ED6 /* PeopleStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,14 +322,6 @@
 				5A8DD5DF1DCD5DDE005BF296 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5A8DD5E31DCD5DDE005BF296 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A8DD5E41DCD5DDE005BF296 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -259,6 +422,7 @@
 		};
 		5A8DD5EA1DCD5DDE005BF296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD6FAC260B7D8770F71AF4E1 /* Pods-Peoplemon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9AU27YYRFS;
@@ -272,6 +436,7 @@
 		};
 		5A8DD5EB1DCD5DDE005BF296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A70B377B95AC79F789561E6D /* Pods-Peoplemon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9AU27YYRFS;
@@ -302,6 +467,7 @@
 				5A8DD5EB1DCD5DDE005BF296 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
