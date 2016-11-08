@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController {
         
         MBProgressHUD.showAdded(to: view, animated: true)
         
-        let user = UserModel(email: email, fullName: fullName, password: password, apiKey: Constants.PeopleMon.apiKey, avatarBase64: nil)
+        let user = UserModel(email: email, password: password , fullName: fullName)
         PeopleStore.shared.register(user) { (success, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
             if success {

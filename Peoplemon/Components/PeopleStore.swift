@@ -21,5 +21,15 @@ class PeopleStore {
             }
         }
     }
-
+    
+    func login(_ loginUser: UserModel, completion:@escaping (_ success: Bool, _ error: String?) -> Void) {
+        WebServices.shared.authUser(loginUser) { (user, error) -> () in
+            if let user = user {
+                WebServices.shared.setAuthToken(user.token, expiration: user.expirationDate)
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
+    }
 }

@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="rMv-6X-7Bc">
             <objects>
-                <viewController id="NeW-03-qKr" sceneMemberID="viewController">
+                <viewController id="NeW-03-qKr" customClass="MapViewController" customModule="Peoplemon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p7E-Xg-F67"/>
                         <viewControllerLayoutGuide type="bottom" id="OBs-Dn-p9F"/>
@@ -48,6 +48,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="e9t-dd-dsK"/>
+                    <connections>
+                        <outlet property="mapView" destination="0hR-81-Gw6" id="QDg-D2-RTZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hd-sb-yNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
