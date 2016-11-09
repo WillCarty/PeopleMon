@@ -41,5 +41,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>&quot;Need your permission to use your phones camera&quot;</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>&quot;Need your permission to use your photo library&quot;</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>&quot;Need to know your location to check for surrounding peoplemon</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>&quot;test&quot;</string>
 </dict>
 </plist>

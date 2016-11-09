@@ -13,6 +13,16 @@ struct Constants {
     // Step 16: Add monthDayYear
     static let monthDayYear = "MM/dd/yyyy"
     
+    //SegueIdentifiers
+    enum SegueIdentifier: String {
+        case PresentLoginNoAnimation
+        case PresentLogin
+        case ShowRegister
+        case ShowPeopleMon
+        case ShowCredits
+    }
+
+    
     // Step 7: Add keychain strings
     public static let keychainIdentifier = "PeopleMonKeychain"
     public static let authTokenExpireDate = "authTokenExpireDate"
@@ -46,6 +56,21 @@ struct Constants {
         static let password = "password"
         static let apiKey = "ApiKey"
         static let username = "username"
+    
+        //v1/User/Nearby Contants
+        static let UserId = "UserId"
+        static let UserName = "UserName"
+        static let AvatarBase64 = "AvatarBase64"
+        static let Longitude = "Longitude"
+        static let Latitude = "Latitude"
+        
+        //catch constants
+        static let CaughtUserId = "CaughtUserId"
+        static let RadiusInMeters = "RadiusInMeters"
+        
+        //
+        static let Created = "Created"
+
     }
 }
 // MARK: - Colors

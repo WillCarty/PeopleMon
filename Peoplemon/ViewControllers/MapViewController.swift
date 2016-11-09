@@ -60,8 +60,8 @@ class MapViewController: UIViewController {
         
         navigationController?.delegate = self
         
-        setupDirectionsView()
-        showDirectionsListButton(false)
+      //  setupDirectionsView()
+     //   showDirectionsListButton(false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,6 +93,14 @@ class MapViewController: UIViewController {
         }) { (finished) in
             self.showingDirections = false
         }
+    }
+    @IBAction func LogoutButton(_ sender: AnyObject) {
+        PeopleStore.shared.logout {
+            
+            // Step 12: comment out line above and switch to enum
+            self.performSegue(withIdentifier: "PresentLoginNoAnimation", sender: self)
+        }
+
     }
     
     
@@ -161,67 +169,67 @@ class MapViewController: UIViewController {
             mapView.add(polyline, level: .aboveRoads)
             mapView.setVisibleMapRect(polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: true)
             
-            showDirectionsListButton(true)
+           // showDirectionsListButton(true)
         }
     }
     
-    fileprivate func setupDirectionsView() {
-        let bounds = UIScreen.main.bounds
-        let navbarHeight: CGFloat = 64
-        let toolbarHeight: CGFloat = 44
-        let padding: CGFloat = 20
-        let buttonSize: CGFloat = 32
-        let directionsViewFrame = CGRect(x: padding,
-                                         y: navbarHeight + padding,
-                                         width: bounds.width - (padding * 2),
-                                         height: bounds.height - navbarHeight - toolbarHeight - (padding * 2))
-        let directionsTableFrame = CGRect(x: 0,
-                                          y: buttonSize,
-                                          width: directionsViewFrame.size.width,
-                                          height: directionsViewFrame.size.height - buttonSize)
-        
-        let closeButton = UIButton(frame: CGRect(x: 0, y: 0,
-                                                 width: directionsViewFrame.width, height: buttonSize))
-        
-        closeButton.setBackgroundImage(#imageLiteral(resourceName: "CloseButton"), for: UIControlState())
-        closeButton.addTarget(self, action: #selector(hideDirectionsList(_:)), for: .touchUpInside)
-        
-        directionsView = UIView(frame: directionsViewFrame)
-        directionsView.backgroundColor = UIColor.white
-        
-        directionsTableView = UITableView(frame: directionsTableFrame)
-        directionsTableView.dataSource = self
-        directionsTableView.delegate = self
-        directionsTableView.rowHeight = UITableViewAutomaticDimension
-        directionsTableView.estimatedRowHeight = 44
-        
-        directionsView.layer.cornerRadius = 8
-        directionsView.clipsToBounds = true
-        directionsView.layer.masksToBounds = true
-        directionsView.layer.shadowColor = UIColor.black.cgColor
-        directionsView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        directionsView.layer.shadowOpacity = 0.3
-        directionsView.layer.shadowRadius = 10.0
-        directionsView.alpha = 0.0
-        let scaleTransform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        let translateTransform = CGAffineTransform(translationX: 0, y: bounds.height)
-        directionsView.transform = scaleTransform.concatenating(translateTransform)
-        
-        directionsView.addSubview(directionsTableView)
-        directionsView.addSubview(closeButton)
-        
-        view.addSubview(directionsView)
-    }
-    
-    fileprivate func showDirectionsListButton(_ show: Bool) {
-        if show {
-            listDirectionsButton.title = "List Directions"
-            listDirectionsButton.isEnabled = true
-        } else {
-            listDirectionsButton.title = ""
-            listDirectionsButton.isEnabled = false
-        }
-    }
+//    fileprivate func setupDirectionsView() {
+//        let bounds = UIScreen.main.bounds
+//        let navbarHeight: CGFloat = 64
+//        let toolbarHeight: CGFloat = 44
+//        let padding: CGFloat = 20
+//        let buttonSize: CGFloat = 32
+//        let directionsViewFrame = CGRect(x: padding,
+//                                         y: navbarHeight + padding,
+//                                         width: bounds.width - (padding * 2),
+//                                         height: bounds.height - navbarHeight - toolbarHeight - (padding * 2))
+//        let directionsTableFrame = CGRect(x: 0,
+//                                          y: buttonSize,
+//                                          width: directionsViewFrame.size.width,
+//                                          height: directionsViewFrame.size.height - buttonSize)
+//        
+//        let closeButton = UIButton(frame: CGRect(x: 0, y: 0,
+//                                                 width: directionsViewFrame.width, height: buttonSize))
+//        
+//        closeButton.setBackgroundImage(#imageLiteral(resourceName: "CloseButton"), for: UIControlState())
+//        closeButton.addTarget(self, action: #selector(hideDirectionsList(_:)), for: .touchUpInside)
+//        
+//        directionsView = UIView(frame: directionsViewFrame)
+//        directionsView.backgroundColor = UIColor.white
+//        
+//        directionsTableView = UITableView(frame: directionsTableFrame)
+//        directionsTableView.dataSource = self
+//        directionsTableView.delegate = self
+//        directionsTableView.rowHeight = UITableViewAutomaticDimension
+//        directionsTableView.estimatedRowHeight = 44
+//        
+//        directionsView.layer.cornerRadius = 8
+//        directionsView.clipsToBounds = true
+//        directionsView.layer.masksToBounds = true
+//        directionsView.layer.shadowColor = UIColor.black.cgColor
+//        directionsView.layer.shadowOffset = CGSize(width: 0, height: 5)
+//        directionsView.layer.shadowOpacity = 0.3
+//        directionsView.layer.shadowRadius = 10.0
+//        directionsView.alpha = 0.0
+//        let scaleTransform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+//        let translateTransform = CGAffineTransform(translationX: 0, y: bounds.height)
+//        directionsView.transform = scaleTransform.concatenating(translateTransform)
+//        
+//        directionsView.addSubview(directionsTableView)
+//        directionsView.addSubview(closeButton)
+//        
+//        view.addSubview(directionsView)
+//    }
+//    
+//    fileprivate func showDirectionsListButton(_ show: Bool) {
+//        if show {
+//            listDirectionsButton.title = "List Directions"
+//            listDirectionsButton.isEnabled = true
+//        } else {
+//            listDirectionsButton.title = ""
+//            listDirectionsButton.isEnabled = false
+//        }
+//    }
 }
 
 
@@ -267,8 +275,8 @@ extension MapViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         tableView.isHidden = false
         
-        showDirectionsListButton(false)
-        hideDirectionsList(self)
+     //   showDirectionsListButton(false)
+     //   hideDirectionsList(self)
         
         if let overlay = overlay {
             mapView.remove(overlay)
@@ -280,8 +288,8 @@ extension MapViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        showDirectionsListButton(false)
-        hideDirectionsList(self)
+     //   showDirectionsListButton(false)
+     //   hideDirectionsList(self)
         
         if let overlay = overlay {
             mapView.remove(overlay)

@@ -32,4 +32,9 @@ class PeopleStore {
             }
         }
     }
+    func logout(_ completion:() -> Void) {
+        WebServices.shared.clearUserAuthToken()
+        completion()
+    }
+
 }
