@@ -5,7 +5,7 @@ import JSQMessagesViewController
 
 final class ChatViewController: JSQMessagesViewController {
     
-    // MARK: Properties
+    
     var channelRef: FIRDatabaseReference?
     var channel: Channel? {
         didSet {
@@ -20,7 +20,7 @@ final class ChatViewController: JSQMessagesViewController {
     
     private lazy var messageRef: FIRDatabaseReference = self.channelRef!.child("messages")
     private var newMessageRefHandle: FIRDatabaseHandle?
-    // MARK: View Lifecycle
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ final class ChatViewController: JSQMessagesViewController {
         
     }
     
-    // MARK: Collection view data source (and related) methods
+  
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
         return messages[indexPath.item]
@@ -45,10 +45,7 @@ final class ChatViewController: JSQMessagesViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return messages.count
     }
-    // MARK: Firebase related methods
-    
-    
-    // MARK: UI and User Interaction
+  
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
         return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
@@ -59,8 +56,8 @@ final class ChatViewController: JSQMessagesViewController {
         return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     }
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
-        let message = messages[indexPath.item] // 1
-        if message.senderId == senderId { // 2
+        let message = messages[indexPath.item]
+        if message.senderId == senderId {
             return outgoingBubbleImageView
         } else { // 3
             return incomingBubbleImageView
@@ -85,8 +82,9 @@ final class ChatViewController: JSQMessagesViewController {
         }
         return cell
     }
+    
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        let itemRef = messageRef.childByAutoId() // 1
+        let itemRef = messageRef.childByAutoId()
         let messageItem = [ // 2
             "senderId": senderId!,
             "senderName": senderDisplayName!,

@@ -66,8 +66,8 @@ class AccountModel: NetworkModel {
         self.requestType = .checkin
     }
     //caughtUser init
-    init(caughtUserId: String?, radius: Double?){
-        self.caughtUserId = caughtUserId
+    init(userId: String?, radius: Double?){
+        self.userId = userId
         self.radius = radius
         self.requestType = .caught
     }
@@ -107,7 +107,7 @@ class AccountModel: NetworkModel {
             params[Constants.PeopleMon.longitude] = longitude as AnyObject?
             params[Constants.PeopleMon.latitude] = latitude as AnyObject?
         case .Catch:
-            params[Constants.PeopleMon.CaughtUserId] = caughtUserId as AnyObject?
+            params[Constants.PeopleMon.CaughtUserId] = userId as AnyObject?
             params[Constants.PeopleMon.radius] = radius as AnyObject?
         case .caught:
         params[Constants.PeopleMon.Created] = created as AnyObject?

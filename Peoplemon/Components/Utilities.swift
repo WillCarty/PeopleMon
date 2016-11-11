@@ -38,4 +38,44 @@ class Utils {
     class func formatNumber(_ amount: Double, prefix: String) -> String {
         return String(format: "\(prefix)$%.2f", abs(amount))
     }
+   
+    class func convertBase64ToImage(base64String: String?) -> UIImage? {
+        
+        if let base64String = base64String, let photoData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) {
+            return UIImage(data: photoData as Data)
+        }
+        
+        return #imageLiteral(resourceName: "defaultpng")
+    }
+   
+   class func convertImageToBase64(image: UIImage?) -> String {
+        
+        if let image = image, let imageData = UIImagePNGRepresentation(image){
+            let base64String = imageData.base64EncodedString()
+            
+            return base64String
+        }
+        return ""
+    }
+    
+    class func resizeImage(image: UIImage, maxSize: CGFloat) -> UIImage {
+        let newSize: CGSize!
+        if image.size.width > image.size.height {
+            newSize = CGSize(width: maxSize, height: maxSize * (image.size.height / image.size.width))
+        } else {
+            newSize = CGSize(width: maxSize * (image.size.width / image.size.height), height: maxSize)
+        }
+        
+        let newRect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height).integral
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+        let context = UIGraphicsGetCurrentContext()
+        context!.interpolationQuality = .high
+        let flipVertical = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: 0, ty: newSize.height)
+        context!.concatenate(flipVertical)
+        context!.draw(image.cgImage!, in: newRect)
+        let newImage = UIImage(cgImage: context!.makeImage()!)
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+
 }

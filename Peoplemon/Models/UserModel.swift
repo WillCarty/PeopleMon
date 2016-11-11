@@ -46,7 +46,10 @@ class UserModel: NetworkModel {
         
     }
     
-    required init() {}
+    required init() {
+    requestType = .getUserInfo
+    }
+
     
     required init(json: JSON) throws {
         token = try? json.getString(at: Constants.PeopleMon.token)
@@ -64,7 +67,7 @@ class UserModel: NetworkModel {
         grantType = try? json.getString(at: Constants.PeopleMon.grantType)
         username = try? json.getString(at: Constants.PeopleMon.email)
         password = try? json.getString(at: Constants.PeopleMon.token)
-        
+        print(avatarBase64)
         
     }
     //Login inits
@@ -129,7 +132,12 @@ class UserModel: NetworkModel {
 
     
     func method() -> Alamofire.HTTPMethod {
-    return .post
+        switch requestType {
+        case .getUserInfo:
+            return .get
+        default:
+            return .post
+        }
     }
     
     func path() -> String {
@@ -164,6 +172,7 @@ class UserModel: NetworkModel {
         case .userInfo:
             params[Constants.PeopleMon.avatarBase64] = avatarBase64 as AnyObject?
             params[Constants.PeopleMon.fullName] = fullName as AnyObject?
+ 
         case .getUserInfo:
             break
         

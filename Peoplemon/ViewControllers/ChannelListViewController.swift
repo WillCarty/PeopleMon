@@ -14,9 +14,9 @@ class ChannelListViewController: UITableViewController{
         case createNewChannelSection = 0
         case currentChannelsSection
     }
-    var senderDisplayName: String? // 1
-    var newChannelTextField: UITextField? // 2
-    private var channels: [Channel] = [] // 3
+    var senderDisplayName: String?
+    var newChannelTextField: UITextField?
+    private var channels: [Channel] = []
     
     
     
@@ -24,15 +24,15 @@ class ChannelListViewController: UITableViewController{
     private var channelRefHandle: FIRDatabaseHandle?
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2 // 1
+        return 2
     }
     
     private func observeChannels() {
         
-        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in // 1
-            let channelData = snapshot.value as! Dictionary<String, AnyObject> // 2
+        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
+            let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
-            if let name = channelData["name"] as! String!, name.characters.count > 0 { // 3
+            if let name = channelData["name"] as! String!, name.characters.count > 0 {
                 self.channels.append(Channel(id: id, name: name))
                 self.tableView.reloadData()
             } else {
@@ -41,7 +41,7 @@ class ChannelListViewController: UITableViewController{
         })
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // 2
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 
         if let currentSection: Section = Section(rawValue: section) {
             switch currentSection {
             case .createNewChannelSection:
@@ -54,19 +54,17 @@ class ChannelListViewController: UITableViewController{
         }
     }
     
-    // 3
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = (indexPath as NSIndexPath).section == Section.createNewChannelSection.rawValue ? "NewChannel" : "ExistingChannel"
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
-        if (indexPath as NSIndexPath).section == Section.createNewChannelSection.rawValue {
-            if let createNewChannelCell = cell as? CreateChannelCell {
-                newChannelTextField = createNewChannelCell.newChannelNameField
-            }
-        } else if (indexPath as NSIndexPath).section == Section.currentChannelsSection.rawValue {
+        
+            if (indexPath as NSIndexPath).section == Section.currentChannelsSection.rawValue {
             cell.textLabel?.text = channels[(indexPath as NSIndexPath).row].name
         }
         
+     
         return cell
     }
     override func viewDidLoad() {
@@ -81,12 +79,12 @@ class ChannelListViewController: UITableViewController{
         }
     }
     @IBAction func createChannel(_ sender: AnyObject) {
-        if let name = newChannelTextField?.text { // 1
-            let newChannelRef = channelRef.childByAutoId() // 2
-            let channelItem = [ // 3
+        if let name = newChannelTextField?.text {
+            let newChannelRef = channelRef.childByAutoId()
+            let channelItem = [
                 "name": name
             ]
-            newChannelRef.setValue(channelItem) // 4
+            newChannelRef.setValue(channelItem)
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
