@@ -8,21 +8,40 @@
 
 import Foundation
 import MapKit
+//
+//    class MapPin: NSObject, MKAnnotation {
+//        var coordinate: CLLocationCoordinate2D
+//        var person: AccountModel?
+//        var title: String?
+//        
+//        
+//        init(person: AccountModel?) {
+//            self.person = person
+//            self.title = (person?.userName)!
+//            if let latitude = person?.latitude, let longitude = person?.longitude{
+//                self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//            } else {
+//                self.coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+//            }
+//            
+//        }
+//}
 
-    class MapPin: NSObject, MKAnnotation {
-        var coordinate: CLLocationCoordinate2D
-        var person: AccountModel?
-        var title: String?
-        
-        
-        init(person: AccountModel?) {
-            self.person = person
-            self.title = (person?.userName)!
-            if let latitude = person?.latitude, let longitude = person?.longitude{
-                self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            } else {
-                self.coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-            }
-            
+class MapPin: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var people: AccountModel?
+    var title: String?
+    var userid: String?
+    
+    
+    init(people: AccountModel) {
+        self.people = people
+        self.title = people.userName
+        self.userid = people.userId
+        if let lat = people.latitude, let long = people.longitude {
+            self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        } else {
+            self.coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
         }
+    }
 }

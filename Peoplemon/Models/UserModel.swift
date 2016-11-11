@@ -78,11 +78,11 @@ class UserModel: NetworkModel {
         }
     
     //Register inits
-    init(email: String, password: String, fullName: String ) {
+    init(email: String, password: String, fullName: String, avatarBase64: String) {
         self.email = email
         self.password = password
         self.fullName = fullName
-        //self.avatarBase64 = avatarBase64
+        self.avatarBase64 = avatarBase64
         self.apiKey = Constants.apiKey
         
         requestType = .register
@@ -120,6 +120,13 @@ class UserModel: NetworkModel {
         self.newPassword = newPassword
         requestType = .setPassword
     }
+    //updateInfo init
+    init(avatarBase64 : String, fullName: String) {
+        self.avatarBase64 = avatarBase64
+        self.fullName = fullName
+        requestType = .userInfo
+    }
+
     
     func method() -> Alamofire.HTTPMethod {
     return .post
@@ -154,6 +161,12 @@ class UserModel: NetworkModel {
             params[Constants.PeopleMon.grantType] = grantType as AnyObject?
             params[Constants.PeopleMon.username] = username as AnyObject?
             params[Constants.PeopleMon.password] = password as AnyObject?
+        case .userInfo:
+            params[Constants.PeopleMon.avatarBase64] = avatarBase64 as AnyObject?
+            params[Constants.PeopleMon.fullName] = fullName as AnyObject?
+        case .getUserInfo:
+            break
+        
             
            
         default:

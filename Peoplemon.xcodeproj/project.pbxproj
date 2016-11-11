@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4C63F068DC95087129BC8B9F /* Pods_Peoplemon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB0CE808C54EB8406A0D401 /* Pods_Peoplemon.framework */; };
+		5A49B9711DD5682D0099F297 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A49B9701DD5682D0099F297 /* GoogleService-Info.plist */; };
+		5A49B9751DD56C3D0099F297 /* ChatLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49B9741DD56C3D0099F297 /* ChatLoginViewController.swift */; };
+		5A49B9771DD56D740099F297 /* MainChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A49B9761DD56D740099F297 /* MainChat.storyboard */; };
+		5A49B9791DD572F10099F297 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49B9781DD572F10099F297 /* ChannelListViewController.swift */; };
+		5A49B97D1DD574AF0099F297 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49B97C1DD574AF0099F297 /* Channel.swift */; };
+		5A49B97F1DD5751E0099F297 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49B97E1DD5751E0099F297 /* CreateChannelCell.swift */; };
+		5A49B9811DD5785B0099F297 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A49B9801DD5785B0099F297 /* ChatViewController.swift */; };
 		5A5AA4DB1DD5053F00C32E24 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA4DA1DD5053F00C32E24 /* ProfileViewController.swift */; };
 		5A5AA4DD1DD513E900C32E24 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA4DC1DD513E900C32E24 /* PeopleTableViewCell.swift */; };
 		5A5AA4E11DD514F800C32E24 /* PeopleCaughtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA4E01DD514F800C32E24 /* PeopleCaughtTableViewController.swift */; };
@@ -28,13 +35,19 @@
 		5AFE477F1DD0D86D00DD5ED6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE477E1DD0D86D00DD5ED6 /* Utilities.swift */; };
 		5AFE47811DD0D95200DD5ED6 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47801DD0D95200DD5ED6 /* AccountModel.swift */; };
 		5AFE47831DD0D96200DD5ED6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47821DD0D96200DD5ED6 /* UserModel.swift */; };
-		5AFE47851DD0D97000DD5ED6 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47841DD0D97000DD5ED6 /* AuthModel.swift */; };
 		5AFE47871DD1059400DD5ED6 /* LoginRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFE47861DD1059400DD5ED6 /* LoginRegister.storyboard */; };
 		5AFE47891DD1090000DD5ED6 /* PeopleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47881DD1090000DD5ED6 /* PeopleStore.swift */; };
 		5AFE478B1DD12DDC00DD5ED6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE478A1DD12DDC00DD5ED6 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A49B9701DD5682D0099F297 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A49B9741DD56C3D0099F297 /* ChatLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatLoginViewController.swift; path = ViewControllers/ChatLoginViewController.swift; sourceTree = "<group>"; };
+		5A49B9761DD56D740099F297 /* MainChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainChat.storyboard; sourceTree = "<group>"; };
+		5A49B9781DD572F10099F297 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelListViewController.swift; path = ViewControllers/ChannelListViewController.swift; sourceTree = "<group>"; };
+		5A49B97C1DD574AF0099F297 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		5A49B97E1DD5751E0099F297 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
+		5A49B9801DD5785B0099F297 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		5A5AA4DA1DD5053F00C32E24 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
 		5A5AA4DC1DD513E900C32E24 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleTableViewCell.swift; path = tableCell/PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		5A5AA4E01DD514F800C32E24 /* PeopleCaughtTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleCaughtTableViewController.swift; path = ViewControllers/PeopleCaughtTableViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +71,6 @@
 		5AFE477E1DD0D86D00DD5ED6 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Components/Utilities.swift; sourceTree = "<group>"; };
 		5AFE47801DD0D95200DD5ED6 /* AccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountModel.swift; path = Models/AccountModel.swift; sourceTree = "<group>"; };
 		5AFE47821DD0D96200DD5ED6 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Models/UserModel.swift; sourceTree = "<group>"; };
-		5AFE47841DD0D97000DD5ED6 /* AuthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		5AFE47861DD1059400DD5ED6 /* LoginRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LoginRegister.storyboard; path = StoryBoards/LoginRegister.storyboard; sourceTree = "<group>"; };
 		5AFE47881DD1090000DD5ED6 /* PeopleStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleStore.swift; path = Components/PeopleStore.swift; sourceTree = "<group>"; };
 		5AFE478A1DD12DDC00DD5ED6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +123,7 @@
 				5A8DD5DA1DCD5DDE005BF296 /* AppDelegate.swift */,
 				5A8DD5DC1DCD5DDE005BF296 /* ViewController.swift */,
 				5A8DD5E11DCD5DDE005BF296 /* Assets.xcassets */,
+				5A49B9701DD5682D0099F297 /* GoogleService-Info.plist */,
 				5A8DD5E61DCD5DDE005BF296 /* Info.plist */,
 			);
 			path = Peoplemon;
@@ -131,7 +144,6 @@
 			children = (
 				5AFE47801DD0D95200DD5ED6 /* AccountModel.swift */,
 				5AFE47821DD0D96200DD5ED6 /* UserModel.swift */,
-				5AFE47841DD0D97000DD5ED6 /* AuthModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -145,6 +157,11 @@
 				5AFE478A1DD12DDC00DD5ED6 /* MainViewController.swift */,
 				5A5AA4DA1DD5053F00C32E24 /* ProfileViewController.swift */,
 				5A5AA4E01DD514F800C32E24 /* PeopleCaughtTableViewController.swift */,
+				5A49B9741DD56C3D0099F297 /* ChatLoginViewController.swift */,
+				5A49B97C1DD574AF0099F297 /* Channel.swift */,
+				5A49B9801DD5785B0099F297 /* ChatViewController.swift */,
+				5A49B97E1DD5751E0099F297 /* CreateChannelCell.swift */,
+				5A49B9781DD572F10099F297 /* ChannelListViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -161,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				5A8DD5DE1DCD5DDE005BF296 /* Main.storyboard */,
+				5A49B9761DD56D740099F297 /* MainChat.storyboard */,
 				5AFE47861DD1059400DD5ED6 /* LoginRegister.storyboard */,
 			);
 			name = Storyboards;
@@ -268,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AFE47871DD1059400DD5ED6 /* LoginRegister.storyboard in Resources */,
+				5A49B9771DD56D740099F297 /* MainChat.storyboard in Resources */,
+				5A49B9711DD5682D0099F297 /* GoogleService-Info.plist in Resources */,
 				5A8DD5E21DCD5DDE005BF296 /* Assets.xcassets in Resources */,
 				5A8DD5E01DCD5DDE005BF296 /* Main.storyboard in Resources */,
 			);
@@ -329,22 +349,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AFE47791DD0D32600DD5ED6 /* LoginViewController.swift in Sources */,
+				5A49B97F1DD5751E0099F297 /* CreateChannelCell.swift in Sources */,
 				5AFE47751DD0D13200DD5ED6 /* WebServicesExension.swift in Sources */,
 				5AFE47711DD0D09000DD5ED6 /* NetworkModel.swift in Sources */,
-				5AFE47851DD0D97000DD5ED6 /* AuthModel.swift in Sources */,
 				5AFE477B1DD0D33C00DD5ED6 /* RegisterViewController.swift in Sources */,
 				5A8DD5DD1DCD5DDE005BF296 /* ViewController.swift in Sources */,
 				5A5AA4DB1DD5053F00C32E24 /* ProfileViewController.swift in Sources */,
 				5A5AA4DD1DD513E900C32E24 /* PeopleTableViewCell.swift in Sources */,
 				5AFE47731DD0D0B700DD5ED6 /* Webservices.swift in Sources */,
 				5AFE478B1DD12DDC00DD5ED6 /* MainViewController.swift in Sources */,
+				5A49B9811DD5785B0099F297 /* ChatViewController.swift in Sources */,
+				5A49B9791DD572F10099F297 /* ChannelListViewController.swift in Sources */,
 				5AC10B051DD271CB00079219 /* MapPin.swift in Sources */,
 				5AC10B031DD271A600079219 /* TransitionManager.swift in Sources */,
 				5A5AA4E11DD514F800C32E24 /* PeopleCaughtTableViewController.swift in Sources */,
+				5A49B97D1DD574AF0099F297 /* Channel.swift in Sources */,
 				5A8DD5DB1DCD5DDE005BF296 /* AppDelegate.swift in Sources */,
 				5AFE47771DD0D1B700DD5ED6 /* Constants.swift in Sources */,
 				5AFE47811DD0D95200DD5ED6 /* AccountModel.swift in Sources */,
 				5AFE477F1DD0D86D00DD5ED6 /* Utilities.swift in Sources */,
+				5A49B9751DD56C3D0099F297 /* ChatLoginViewController.swift in Sources */,
 				5AFE47831DD0D96200DD5ED6 /* UserModel.swift in Sources */,
 				5AC10B011DD2706E00079219 /* PeopleMonViewController.swift in Sources */,
 				5AFE47891DD1090000DD5ED6 /* PeopleStore.swift in Sources */,

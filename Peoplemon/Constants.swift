@@ -54,7 +54,6 @@ struct Constants {
         //v1/User/Nearby Contants
         static let UserId = "UserId"
         static let UserName = "UserName"
-        static let AvatarBase64 = "AvatarBase64"
         static let longitude = "Longitude"
         static let latitude = "Latitude"
         

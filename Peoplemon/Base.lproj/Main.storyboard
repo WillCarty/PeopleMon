@@ -30,9 +30,10 @@
                                 <items>
                                     <navigationItem id="5BQ-zh-oxw">
                                         <leftBarButtonItems>
-                                            <barButtonItem title="CheckIn" id="Do5-54-qJO">
+                                            <barButtonItem title="PokeChat" id="Do5-54-qJO">
                                                 <connections>
                                                     <action selector="checkInButton:" destination="BYZ-38-t0r" id="qKi-lD-ovt"/>
+                                                    <segue destination="bZV-3f-z4H" kind="show" id="eBg-OT-1NG"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="Profile" id="ciX-4h-OyM">
@@ -82,7 +83,15 @@
                 <viewControllerPlaceholder storyboardName="LoginRegister" id="KNt-i1-io5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K54-nV-WcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="497"/>
+            <point key="canvasLocation" x="1093" y="642"/>
+        </scene>
+        <!--MainChat-->
+        <scene sceneID="T49-1N-7bI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainChat" id="bZV-3f-z4H" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJD-hE-9LD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="496"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oJX-2r-CKe">
@@ -130,7 +139,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IFw-hc-DQx" id="VEm-sg-xGm">
-                                    <frame key="frameInset" width="375" height="107"/>
+                                    <frame key="frameInset" width="375" height="107.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHT-ts-K4q">
@@ -176,7 +185,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xvl-zA-TYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5999999999999" y="776.76161919040487"/>
+            <point key="canvasLocation" x="887" y="994"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="98S-jB-g3Y">
+            <objects>
+                <viewController id="Bkk-Y1-oPV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j7d-jY-B1K"/>
+                        <viewControllerLayoutGuide type="bottom" id="72m-vJ-4BR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qsg-aw-vzc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l4f-s5-bF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="994"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="pDF-O9-2wF">
@@ -201,6 +228,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFF-gJ-G4O">
+                                <frame key="frameInset" minX="87" minY="244" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -213,7 +247,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="save" id="OVh-5t-Xpu">
                                 <connections>
-                                    <action selector="saveButton:" destination="Fku-Oj-ifu" id="urM-qN-RPk"/>
+                                    <action selector="saveButton:" destination="Fku-Oj-ifu" id="Xvz-VV-3aQ"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="camera" id="psq-1P-ck2">
@@ -224,13 +258,14 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="profilePic" destination="wgO-4b-hLC" id="HXl-aZ-0rf"/>
-                        <outlet property="usernameLabel" destination="pfN-tu-o6x" id="ze0-SM-1bW"/>
+                        <outlet property="emailLabel" destination="uFF-gJ-G4O" id="QWQ-qN-md1"/>
+                        <outlet property="fullnameLabel" destination="pfN-tu-o6x" id="SXd-mp-gHT"/>
+                        <outlet property="profilePicture" destination="wgO-4b-hLC" id="PQa-uG-EwH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57B-Pm-4Oh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295.1999999999998" y="53.523238380809602"/>
+            <point key="canvasLocation" x="1406" y="-980"/>
         </scene>
     </scenes>
     <resources>

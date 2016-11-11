@@ -51,6 +51,9 @@ class PeopleMonViewController: UIViewController {
         
     }
     // Do any additional setup after loading the view.
+    
+    
+    
     func checkIn() {
         if updatingLocation == true {
             let coordinate = locationManager.location?.coordinate
@@ -58,6 +61,14 @@ class PeopleMonViewController: UIViewController {
             WebServices.shared.postObject(user, completion: { (object, error) in
             })
         }
+    }
+    func convertBase64ToImage(base64String: String?) -> UIImage? {
+       
+        if let base64String = base64String, let photoData = NSData(base64Encoded: base64String, options: .ignoreUnknownCharacters) {
+            return UIImage(data: photoData as Data)
+        }
+        
+        return #imageLiteral(resourceName: "defaultpng")
     }
 
 
@@ -68,7 +79,7 @@ class PeopleMonViewController: UIViewController {
             if let objects = objects {
                 self.annotations = []
                 for person in objects {
-                    let pin = MapPin(person: person)
+                    let pin = MapPin(people: person)
                     self.annotations.append(pin)
                 
                 }
@@ -102,46 +113,44 @@ extension PeopleMonViewController: CLLocationManagerDelegate {
     }
 }
 
-//extension PeopleMonViewController: MKMapViewDelegate {
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        if annotation is MKUserLocation {
-//            return nil
-//        }
-//        let reuseId = "pin"
-//        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-//         if pinView == nil {
-//            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-//            pinView!.canShowCallout = true
-//            pinView!.animatesDrop = true
-//            
-//           
-//           } else {
-//            pinView!.annotation = annotation
-//        
-//        }
-//        
-//        return pinView
-//    }
-//    
-//
-//        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//            if let mapPin = view.annotation as? MapPin, let person = mapPin.person, let name = person.userName  , let userId = person.userId {
-//                let alert = UIAlertController(title: "Catch User", message: "Catch \(name)?", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "Catch", style: .default, handler: { (action) in
-//                    
-//                    let catchPerson = AccountModel(caughtUserId: userId, radius: Constants.radius)
-//                    WebServices.shared.postObject(catchPerson, completion: { (object, error) in
-//                        if let error = error {
-//                            self.present(Utils.createAlert(message: error), animated: true, completion: nil)
-//                        } else {
-//                            self.present(Utils.createAlert(message:(error)!), animated: true, completion: nil)
-//                        }
-//                    })
-//                }))
-//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-//            }
-//        }
-//    }
-//
-//
+extension PeopleMonViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView?.isEnabled = true
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.animatesDrop = true
+            let catcher = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 20))
+            catcher.setTitle("Catch", for: .normal)
+            catcher.backgroundColor = #colorLiteral(red: 0, green: 0.9771030545, blue: 0.043536596, alpha: 1)
+            catcher.sizeToFit()
+            
+            pinView?.leftCalloutAccessoryView = catcher
+           // pinView?.rightCalloutAccessoryView = convertBase64ToImage(base64String: Constants.PeopleMon.avatarBase64)
+            
+        } else {
+            pinView!.annotation = annotation
+        }
+        
+        return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let annotation1 = view.annotation as! MapPin
+        let caughtPerson = AccountModel(caughtUserId: annotation1.userid!, radius: 5000)
+        WebServices.shared.postObject(caughtPerson, completion: { (object, error) in
+           
+        })
+        
+        
+        mapView.removeAnnotation(view.annotation!)
+    }
+}
+

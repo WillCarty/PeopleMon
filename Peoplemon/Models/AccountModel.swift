@@ -28,6 +28,8 @@ class AccountModel: NetworkModel {
     ///v1/User/Catch vars
     var caughtUserId: String?
     var radius: Double?
+   
+    
     
     enum RequestType{
         case nearby
@@ -42,7 +44,7 @@ class AccountModel: NetworkModel {
     required init(json: JSON) throws {
         userId = try? json.getString(at: Constants.PeopleMon.UserId)
         userName = try? json.getString(at: Constants.PeopleMon.UserName)
-        avatarBase64 = try? json.getString(at: Constants.PeopleMon.AvatarBase64)
+        avatarBase64 = try? json.getString(at: Constants.PeopleMon.avatarBase64)
         created = try? json.getString(at: Constants.PeopleMon.Created)
         longitude = try? json.getDouble(at: Constants.PeopleMon.longitude)
         latitude = try? json.getDouble(at: Constants.PeopleMon.latitude)
@@ -63,12 +65,14 @@ class AccountModel: NetworkModel {
         self.latitude = coordinate.latitude
         self.requestType = .checkin
     }
+    //caughtUser init
     init(caughtUserId: String?, radius: Double?){
         self.caughtUserId = caughtUserId
         self.radius = radius
         self.requestType = .caught
     }
-
+    //updateInfo init
+   
     
     func method() -> HTTPMethod {
         switch requestType {
@@ -107,7 +111,7 @@ class AccountModel: NetworkModel {
             params[Constants.PeopleMon.radius] = radius as AnyObject?
         case .caught:
         params[Constants.PeopleMon.Created] = created as AnyObject?
-            params[Constants.PeopleMon.AvatarBase64] = avatarBase64 as AnyObject?
+            params[Constants.PeopleMon.avatarBase64] = avatarBase64 as AnyObject?
         }
         
         return params
