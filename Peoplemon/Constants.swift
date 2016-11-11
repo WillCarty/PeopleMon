@@ -12,15 +12,8 @@ import Hue
 struct Constants {
     // Step 16: Add monthDayYear
     static let monthDayYear = "MM/dd/yyyy"
-    
-    //SegueIdentifiers
-    enum SegueIdentifier: String {
-        case PresentLoginNoAnimation
-        case PresentLogin
-        case ShowRegister
-        case ShowPeopleMon
-        case ShowCredits
-    }
+    static let radius = 100.00
+ 
 
     
     // Step 7: Add keychain strings
@@ -28,6 +21,7 @@ struct Constants {
     public static let authTokenExpireDate = "authTokenExpireDate"
     public static let authToken = "authToken"
     static let apiKey = "iOSandroid301november2016"
+    
 
     // Step 4: JSON Constants
     struct JSON {
@@ -61,12 +55,13 @@ struct Constants {
         static let UserId = "UserId"
         static let UserName = "UserName"
         static let AvatarBase64 = "AvatarBase64"
-        static let Longitude = "Longitude"
-        static let Latitude = "Latitude"
+        static let longitude = "Longitude"
+        static let latitude = "Latitude"
         
         //catch constants
         static let CaughtUserId = "CaughtUserId"
-        static let RadiusInMeters = "RadiusInMeters"
+        static let radius = "radiusInMeters"
+        static let Coordinate = "Coordinate"
         
         //
         static let Created = "Created"

@@ -37,8 +37,6 @@ class RegisterViewController: UIViewController {
             return
         }
 
-        
-        
         guard let password = enterPasswordText.text , password != "" else {
             present(Utils.createAlert("Login Error", message: "Please provide a password"), animated: true, completion: nil)
             return
@@ -64,15 +62,4 @@ class RegisterViewController: UIViewController {
         }
 
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

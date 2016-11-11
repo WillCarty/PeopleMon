@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4C63F068DC95087129BC8B9F /* Pods_Peoplemon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB0CE808C54EB8406A0D401 /* Pods_Peoplemon.framework */; };
+		5A5AA4DB1DD5053F00C32E24 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA4DA1DD5053F00C32E24 /* ProfileViewController.swift */; };
+		5A5AA4DD1DD513E900C32E24 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA4DC1DD513E900C32E24 /* PeopleTableViewCell.swift */; };
+		5A5AA4E11DD514F800C32E24 /* PeopleCaughtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA4E01DD514F800C32E24 /* PeopleCaughtTableViewController.swift */; };
 		5A8DD5DB1DCD5DDE005BF296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DD5DA1DCD5DDE005BF296 /* AppDelegate.swift */; };
 		5A8DD5DD1DCD5DDE005BF296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DD5DC1DCD5DDE005BF296 /* ViewController.swift */; };
 		5A8DD5E01DCD5DDE005BF296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A8DD5DE1DCD5DDE005BF296 /* Main.storyboard */; };
 		5A8DD5E21DCD5DDE005BF296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8DD5E11DCD5DDE005BF296 /* Assets.xcassets */; };
 		5AC10AFF1DD228BF00079219 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC10AFE1DD228BF00079219 /* MapKit.framework */; };
-		5AC10B011DD2706E00079219 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10B001DD2706E00079219 /* MapViewController.swift */; };
+		5AC10B011DD2706E00079219 /* PeopleMonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10B001DD2706E00079219 /* PeopleMonViewController.swift */; };
 		5AC10B031DD271A600079219 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10B021DD271A600079219 /* TransitionManager.swift */; };
 		5AC10B051DD271CB00079219 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10B041DD271CB00079219 /* MapPin.swift */; };
-		5AC10B071DD2721400079219 /* DetailedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC10B061DD2721400079219 /* DetailedMapViewController.swift */; };
 		5AFE47711DD0D09000DD5ED6 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47701DD0D09000DD5ED6 /* NetworkModel.swift */; };
 		5AFE47731DD0D0B700DD5ED6 /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47721DD0D0B700DD5ED6 /* Webservices.swift */; };
 		5AFE47751DD0D13200DD5ED6 /* WebServicesExension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE47741DD0D13200DD5ED6 /* WebServicesExension.swift */; };
@@ -33,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A5AA4DA1DD5053F00C32E24 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
+		5A5AA4DC1DD513E900C32E24 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleTableViewCell.swift; path = tableCell/PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		5A5AA4E01DD514F800C32E24 /* PeopleCaughtTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleCaughtTableViewController.swift; path = ViewControllers/PeopleCaughtTableViewController.swift; sourceTree = "<group>"; };
 		5A8DD5D71DCD5DDE005BF296 /* Peoplemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peoplemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8DD5DA1DCD5DDE005BF296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A8DD5DC1DCD5DDE005BF296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,10 +46,9 @@
 		5A8DD5E61DCD5DDE005BF296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AC10AFD1DD228BB00079219 /* Peoplemon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Peoplemon.entitlements; sourceTree = "<group>"; };
 		5AC10AFE1DD228BF00079219 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		5AC10B001DD2706E00079219 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ViewControllers/MapViewController.swift; sourceTree = "<group>"; };
+		5AC10B001DD2706E00079219 /* PeopleMonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleMonViewController.swift; path = ViewControllers/PeopleMonViewController.swift; sourceTree = "<group>"; };
 		5AC10B021DD271A600079219 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Components/TransitionManager.swift; sourceTree = "<group>"; };
 		5AC10B041DD271CB00079219 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapPin.swift; path = Components/MapPin.swift; sourceTree = "<group>"; };
-		5AC10B061DD2721400079219 /* DetailedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailedMapViewController.swift; path = ViewControllers/DetailedMapViewController.swift; sourceTree = "<group>"; };
 		5AFE47701DD0D09000DD5ED6 /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkModel.swift; path = networking/NetworkModel.swift; sourceTree = "<group>"; };
 		5AFE47721DD0D0B700DD5ED6 /* Webservices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Webservices.swift; path = networking/Webservices.swift; sourceTree = "<group>"; };
 		5AFE47741DD0D13200DD5ED6 /* WebServicesExension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServicesExension.swift; path = networking/WebServicesExension.swift; sourceTree = "<group>"; };
@@ -137,9 +141,10 @@
 			children = (
 				5AFE47781DD0D32600DD5ED6 /* LoginViewController.swift */,
 				5AFE477A1DD0D33C00DD5ED6 /* RegisterViewController.swift */,
+				5AC10B001DD2706E00079219 /* PeopleMonViewController.swift */,
 				5AFE478A1DD12DDC00DD5ED6 /* MainViewController.swift */,
-				5AC10B001DD2706E00079219 /* MapViewController.swift */,
-				5AC10B061DD2721400079219 /* DetailedMapViewController.swift */,
+				5A5AA4DA1DD5053F00C32E24 /* ProfileViewController.swift */,
+				5A5AA4E01DD514F800C32E24 /* PeopleCaughtTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 		5AFE476D1DD0CB3D00DD5ED6 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				5A5AA4DC1DD513E900C32E24 /* PeopleTableViewCell.swift */,
 			);
 			name = TableCell;
 			sourceTree = "<group>";
@@ -327,18 +333,20 @@
 				5AFE47711DD0D09000DD5ED6 /* NetworkModel.swift in Sources */,
 				5AFE47851DD0D97000DD5ED6 /* AuthModel.swift in Sources */,
 				5AFE477B1DD0D33C00DD5ED6 /* RegisterViewController.swift in Sources */,
-				5AC10B071DD2721400079219 /* DetailedMapViewController.swift in Sources */,
 				5A8DD5DD1DCD5DDE005BF296 /* ViewController.swift in Sources */,
+				5A5AA4DB1DD5053F00C32E24 /* ProfileViewController.swift in Sources */,
+				5A5AA4DD1DD513E900C32E24 /* PeopleTableViewCell.swift in Sources */,
 				5AFE47731DD0D0B700DD5ED6 /* Webservices.swift in Sources */,
 				5AFE478B1DD12DDC00DD5ED6 /* MainViewController.swift in Sources */,
 				5AC10B051DD271CB00079219 /* MapPin.swift in Sources */,
 				5AC10B031DD271A600079219 /* TransitionManager.swift in Sources */,
+				5A5AA4E11DD514F800C32E24 /* PeopleCaughtTableViewController.swift in Sources */,
 				5A8DD5DB1DCD5DDE005BF296 /* AppDelegate.swift in Sources */,
 				5AFE47771DD0D1B700DD5ED6 /* Constants.swift in Sources */,
 				5AFE47811DD0D95200DD5ED6 /* AccountModel.swift in Sources */,
 				5AFE477F1DD0D86D00DD5ED6 /* Utilities.swift in Sources */,
 				5AFE47831DD0D96200DD5ED6 /* UserModel.swift in Sources */,
-				5AC10B011DD2706E00079219 /* MapViewController.swift in Sources */,
+				5AC10B011DD2706E00079219 /* PeopleMonViewController.swift in Sources */,
 				5AFE47891DD1090000DD5ED6 /* PeopleStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

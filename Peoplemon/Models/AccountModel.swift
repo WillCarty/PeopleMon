@@ -9,24 +9,25 @@
 import Foundation
 import Alamofire
 import Freddy
+import MapKit
 
 class AccountModel: NetworkModel {
     
     var requestType: RequestType = .nearby
     
     ///v1/User/Nearby Get vars
-    var UserId: String?
-    var UserName: String?
-    var AvatarBase64: String?
-    var Created: String?
+    var userId: String?
+    var userName: String?
+    var avatarBase64: String?
+    var created: String?
     
     ///v1 and v2/User/CheckIn Vars
-    var Longitude: Double?
-    var Latitude: Double?
+    var longitude: Double?
+    var latitude: Double?
     
     ///v1/User/Catch vars
-    var CaughtUserId: String?
-    var RadiusInMeters: Double?
+    var caughtUserId: String?
+    var radius: Double?
     
     enum RequestType{
         case nearby
@@ -39,20 +40,48 @@ class AccountModel: NetworkModel {
     required init() {}
     
     required init(json: JSON) throws {
-        UserId = try? json.getString(at: Constants.PeopleMon.UserId)
-        UserName = try? json.getString(at: Constants.PeopleMon.UserName)
-        AvatarBase64 = try? json.getString(at: Constants.PeopleMon.AvatarBase64)
-        Created = try? json.getString(at: Constants.PeopleMon.Created)
-        Longitude = try? json.getDouble(at: Constants.PeopleMon.Longitude)
-        Latitude = try? json.getDouble(at: Constants.PeopleMon.Latitude)
-        CaughtUserId = try? json.getString(at: Constants.PeopleMon.CaughtUserId)
-        RadiusInMeters = try? json.getDouble(at: Constants.PeopleMon.RadiusInMeters)
-
+        userId = try? json.getString(at: Constants.PeopleMon.UserId)
+        userName = try? json.getString(at: Constants.PeopleMon.UserName)
+        avatarBase64 = try? json.getString(at: Constants.PeopleMon.AvatarBase64)
+        created = try? json.getString(at: Constants.PeopleMon.Created)
+        longitude = try? json.getDouble(at: Constants.PeopleMon.longitude)
+        latitude = try? json.getDouble(at: Constants.PeopleMon.latitude)
+        caughtUserId = try? json.getString(at: Constants.PeopleMon.CaughtUserId)
+        radius = try? json.getDouble(at: Constants.PeopleMon.radius)
+        
     }
     
+    //nearby inits
+    init(radius: Double?) {
+        self.requestType = .nearby
+        self.radius = radius
+        
+    }
+    //checkIn init
+    init(coordinate: CLLocationCoordinate2D) {
+        self.longitude = coordinate.longitude
+        self.latitude = coordinate.latitude
+        self.requestType = .checkin
+    }
+    init(caughtUserId: String?, radius: Double?){
+        self.caughtUserId = caughtUserId
+        self.radius = radius
+        self.requestType = .caught
+    }
+
+    
     func method() -> HTTPMethod {
-        return .post
+        switch requestType {
+        case .checkin:
+            return .post
+        case . Catch:
+            return .post
+        case .nearby:
+            return .get
+        case .caught:
+            return .get
         }
+    }
     func path() -> String {
         switch requestType {
         case .nearby :
@@ -63,31 +92,26 @@ class AccountModel: NetworkModel {
             return "/v1/User/Catch"
         case .caught:
             return "/v1/User/Caught"
-                    }
+        }
     }
     func toDictionary() -> [String : AnyObject]? {
         var params: [String: AnyObject] = [:]
         switch requestType {
         case .nearby:
-            params[Constants.PeopleMon.UserId] = UserId as AnyObject?
-            params[Constants.PeopleMon.UserName] = UserName as AnyObject?
-            params[Constants.PeopleMon.AvatarBase64] = AvatarBase64 as AnyObject
-            params[Constants.PeopleMon.Longitude] = Longitude as AnyObject
-            params[Constants.PeopleMon.Latitude] = Latitude as AnyObject
-            params[Constants.PeopleMon.Created] = Created as AnyObject
+            params[Constants.PeopleMon.radius] = radius as AnyObject?
         case .checkin:
-            params[Constants.PeopleMon.Longitude] = Longitude as AnyObject
-            params[Constants.PeopleMon.Latitude] = Latitude as AnyObject
+            params[Constants.PeopleMon.longitude] = longitude as AnyObject?
+            params[Constants.PeopleMon.latitude] = latitude as AnyObject?
         case .Catch:
-            params[Constants.PeopleMon.CaughtUserId] = CaughtUserId as AnyObject
-            params[Constants.PeopleMon.RadiusInMeters] = RadiusInMeters as AnyObject
+            params[Constants.PeopleMon.CaughtUserId] = caughtUserId as AnyObject?
+            params[Constants.PeopleMon.radius] = radius as AnyObject?
         case .caught:
-            params[Constants.PeopleMon.UserId] = UserId as AnyObject
-            params[Constants.PeopleMon.UserName] = UserName as AnyObject
-            params[Constants.PeopleMon.Created] = Created as AnyObject
-            params[Constants.PeopleMon.AvatarBase64] = AvatarBase64 as AnyObject
+        params[Constants.PeopleMon.Created] = created as AnyObject?
+            params[Constants.PeopleMon.AvatarBase64] = avatarBase64 as AnyObject?
         }
-
-    
+        
+        return params
+        
+    }
     
 }
